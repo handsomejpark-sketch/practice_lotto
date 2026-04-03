@@ -7,7 +7,7 @@
 - Next.js App Router
 - TypeScript
 - Supabase
-- Cloudflare Pages 배포 대상
+- Cloudflare Pages
 
 ## Current Features
 
@@ -20,8 +20,6 @@
 
 ## Environment Variables
 
-아래 값이 필요합니다.
-
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
@@ -30,11 +28,9 @@ SESSION_SECRET=
 DATABASE_URL=
 ```
 
-예시는 [.env.example](C:\Users\jpark\OneDrive\Desktop\practice_lotto\.env.example)에 정리되어 있습니다.
+예시는 [.env.example](C:\Users\jpark\OneDrive\Desktop\practice_lotto\.env.example)에 있습니다.
 
 ## Local Checks
-
-정적 검증:
 
 ```bash
 npm run lint
