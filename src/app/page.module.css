@@ -1,0 +1,468 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 215, 92, 0.28), transparent 28%),
+    linear-gradient(180deg, #fff6d8 0%, #ffd55f 32%, #f97316 72%, #7c2d12 100%);
+  color: #241510;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 18px 18px auto;
+  height: 220px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 244, 201, 0.2));
+  filter: blur(12px);
+  z-index: 0;
+}
+
+.heroCopy,
+.authCard,
+.gameShell {
+  position: relative;
+  z-index: 1;
+}
+
+.heroCopy {
+  display: grid;
+  gap: 18px;
+  padding: 28px 24px 8px;
+}
+
+.kicker,
+.sectionEyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(93, 33, 0, 0.78);
+}
+
+.heroCopy h1 {
+  max-width: 720px;
+  font-size: clamp(2.6rem, 10vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.summary {
+  max-width: 620px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(45, 20, 6, 0.8);
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.heroStats article {
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255, 250, 233, 0.74);
+  border: 1px solid rgba(146, 64, 14, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+.heroStats strong {
+  font-size: 1.7rem;
+}
+
+.heroStats span {
+  font-size: 0.85rem;
+  color: rgba(80, 38, 12, 0.8);
+}
+
+.authCard,
+.gameShell {
+  margin: 0 24px 24px;
+  border-radius: 28px;
+  background: rgba(97, 31, 0, 0.74);
+  border: 1px solid rgba(255, 240, 213, 0.2);
+  color: #fff6ea;
+  box-shadow: 0 24px 80px rgba(67, 20, 0, 0.28);
+  backdrop-filter: blur(22px);
+}
+
+.authCard {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.badge {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fff1b2;
+  color: #7c2d12;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.authCard h2 {
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.authDescription,
+.status {
+  color: rgba(255, 243, 232, 0.82);
+  line-height: 1.5;
+}
+
+.authForm {
+  display: grid;
+  gap: 16px;
+}
+
+.authForm label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.92rem;
+}
+
+.authForm input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 235, 200, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 248, 237, 0.12);
+  color: #fffdf8;
+  font-size: 1rem;
+}
+
+.authForm input::placeholder {
+  color: rgba(255, 245, 237, 0.45);
+}
+
+.authActions,
+.userPanel {
+  display: grid;
+  gap: 12px;
+}
+
+.primaryButton,
+.secondaryButton,
+.choiceButton,
+.ticketFooter button,
+.tab,
+.tabActive {
+  border: 0;
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    opacity 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.choiceButton:hover,
+.ticketFooter button:hover,
+.tab:hover,
+.tabActive:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton {
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: #fff3b4;
+  color: #6c2a0c;
+  font-weight: 800;
+}
+
+.secondaryButton {
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255, 248, 238, 0.14);
+  color: #fffaf5;
+  font-weight: 700;
+}
+
+.userHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.userHighlights span {
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255, 248, 234, 0.12);
+  font-size: 0.86rem;
+}
+
+.gameShell {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sectionHeader h2 {
+  font-size: 1.9rem;
+}
+
+.tabGroup {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 248, 233, 0.1);
+}
+
+.tab,
+.tabActive {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: transparent;
+  color: #fff4e6;
+  font-weight: 700;
+}
+
+.tabActive {
+  background: #fff3b4;
+  color: #6f2d12;
+}
+
+.playGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.choicePanel,
+.resultPanel,
+.ticketSection {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 247, 229, 0.1);
+  border: 1px solid rgba(255, 240, 212, 0.12);
+}
+
+.choicePanel p,
+.resultHint,
+.emptyState p,
+.ticketFooter p {
+  color: rgba(255, 244, 234, 0.82);
+  line-height: 1.6;
+}
+
+.choiceButtons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.choiceButton {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  min-height: 120px;
+  padding: 16px 12px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 244, 191, 0.95), rgba(255, 209, 102, 0.96));
+  color: #6d280d;
+  font-weight: 800;
+}
+
+.choiceEmoji {
+  font-size: 2.2rem;
+}
+
+.resultCard {
+  display: grid;
+  gap: 16px;
+}
+
+.resultChoices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.resultChoices article {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 248, 233, 0.12);
+}
+
+.resultChoices span {
+  color: rgba(255, 239, 224, 0.76);
+  font-size: 0.82rem;
+}
+
+.resultChoices strong,
+.resultStatus {
+  font-size: 1.5rem;
+}
+
+.resultStatus {
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff1b8;
+  color: #7c2d12;
+  font-weight: 900;
+}
+
+.resultEmpty,
+.emptyState {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  border-radius: 18px;
+  background: rgba(255, 247, 229, 0.06);
+  text-align: center;
+}
+
+.ticketPreview,
+.numberRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ticketPreview span,
+.numberRow span {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff1af, #ffcb3d);
+  color: #6b2407;
+  font-weight: 900;
+}
+
+.ticketSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticketList {
+  display: grid;
+  gap: 14px;
+}
+
+.ticketCard {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 249, 234, 0.12);
+  border: 1px solid rgba(255, 238, 210, 0.12);
+}
+
+.ticketHeader,
+.ticketFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticketHeader time {
+  font-size: 0.8rem;
+  color: rgba(255, 241, 230, 0.74);
+}
+
+.ticketNew,
+.ticketSeen {
+  padding: 8px 11px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.ticketNew {
+  background: #fff3b4;
+  color: #6e2b10;
+}
+
+.ticketSeen {
+  background: rgba(255, 249, 235, 0.18);
+}
+
+.ticketFooter button {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 243, 198, 0.95);
+  color: #6d270b;
+  font-weight: 800;
+}
+
+@media (max-width: 740px) {
+  .heroStats,
+  .resultChoices,
+  .choiceButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeader,
+  .ticketSummary,
+  .ticketHeader,
+  .ticketFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ticketFooter button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 16px;
+  }
+
+  .heroCopy,
+  .authCard,
+  .gameShell {
+    margin: 0;
+  }
+
+  .heroCopy {
+    padding: 24px 8px 12px;
+  }
+
+  .authCard,
+  .gameShell {
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .ticketPreview span,
+  .numberRow span {
+    width: 42px;
+    height: 42px;
+  }
+}
