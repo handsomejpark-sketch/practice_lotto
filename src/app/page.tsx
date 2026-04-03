@@ -21,7 +21,8 @@ async function requestJson<T>(input: RequestInfo, init?: RequestInit) {
     },
   });
 
-  const payload = (await response.json()) as T & { error?: string; message?: string };
+  const text = await response.text();
+  const payload = (text ? JSON.parse(text) : {}) as T & { error?: string; message?: string };
 
   if (!response.ok) {
     throw new Error(payload.error ?? "요청 처리 중 오류가 발생했습니다.");
