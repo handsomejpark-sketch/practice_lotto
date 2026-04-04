@@ -17,7 +17,7 @@ export async function POST(
 
     const { ticketId } = await context.params;
     const viewedAt = new Date().toISOString();
-    const supabase = getSupabaseAdmin();
+    const supabase = await getSupabaseAdmin();
 
     const updateResult = await supabase
       .from("lotto_tickets")

@@ -22,7 +22,7 @@ export async function POST(request: Request) {
 
     const computerChoice = randomChoice();
     const result = decideResult(userChoice, computerChoice);
-    const supabase = getSupabaseAdmin();
+    const supabase = await getSupabaseAdmin();
 
     const gameResult = await supabase
       .from("game_plays")

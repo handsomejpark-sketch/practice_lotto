@@ -88,7 +88,7 @@ export async function clearSessionCookie() {
 }
 
 async function findSessionRow(tokenHash: string) {
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
 
   const tokenQuery = await supabase
     .from("sessions")
@@ -108,7 +108,7 @@ async function findSessionRow(tokenHash: string) {
 }
 
 async function insertSession(userId: string, tokenHash: string, expiresAt: string) {
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
 
   const primaryInsert = await supabase
     .from("sessions")
@@ -128,7 +128,7 @@ async function insertSession(userId: string, tokenHash: string, expiresAt: strin
 }
 
 async function deleteSession(tokenHash: string) {
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
 
   const primaryDelete = await supabase.from("sessions").delete().eq("token", tokenHash);
 
@@ -172,7 +172,7 @@ export async function getCurrentUser() {
     return null;
   }
 
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
   const userResult = await supabase
     .from("users")
     .select("id, nickname, pin_hash")
@@ -200,7 +200,7 @@ export async function logoutCurrentUser() {
 }
 
 export async function findUserByNickname(nickname: string) {
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
   const result = await supabase
     .from("users")
     .select("id, nickname, pin_hash")
@@ -215,7 +215,7 @@ export async function findUserByNickname(nickname: string) {
 }
 
 export async function createUser(nickname: string, pinHash: string) {
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
   const result = await supabase
     .from("users")
     .insert({ nickname, pin_hash: pinHash })
@@ -230,7 +230,7 @@ export async function createUser(nickname: string, pinHash: string) {
 }
 
 export async function getDashboardPayload(userId: string): Promise<DashboardPayload> {
-  const supabase = getSupabaseAdmin();
+  const supabase = await getSupabaseAdmin();
   const [ticketResult, historyResult] = await Promise.all([
     supabase.from("lotto_tickets").select("*").eq("user_id", userId).order("issued_at", { ascending: false }),
     supabase.from("game_plays").select("*").eq("user_id", userId).order("created_at", { ascending: false }).limit(8),
