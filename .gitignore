@@ -30,9 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 .next-dev*.log
+.wrangler-tail*.log
 .open-next
 .wrangler
 .dev.vars
+secrets.json
+update_cf_envs.ps1
 
 # env files (can opt-in for committing if needed)
 .env*
