@@ -28,13 +28,13 @@ export async function POST(request: Request) {
     const payload = await getDashboardPayload(user.id);
 
     return NextResponse.json({
-      message: "회원가입이 완료되었습니다.",
+      message: "회원가입 완료. 첫 승리로 티켓을 받아보세요.",
       user: { id: user.id, nickname: user.nickname },
       tickets: payload.tickets,
       history: payload.history,
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "회원가입 처리 중 오류가 발생했습니다.";
+    const message = error instanceof Error ? error.message : "회원가입 처리 중 문제가 발생했습니다.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

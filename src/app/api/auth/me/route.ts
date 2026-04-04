@@ -19,7 +19,7 @@ export async function GET() {
       history: payload.history,
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "세션 조회 중 오류가 발생했습니다.";
+    const message = error instanceof Error ? error.message : "세션 정보를 불러오는 중 문제가 발생했습니다.";
     return NextResponse.json({ error: message, user: null, tickets: [], history: [] }, { status: 500 });
   }
 }

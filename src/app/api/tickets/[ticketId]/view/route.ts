@@ -12,7 +12,7 @@ export async function POST(
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });
+      return NextResponse.json({ error: "티켓을 확인하려면 먼저 로그인해 주세요." }, { status: 401 });
     }
 
     const { ticketId } = await context.params;
@@ -51,7 +51,7 @@ export async function POST(
       },
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "티켓 처리 중 오류가 발생했습니다.";
+    const message = error instanceof Error ? error.message : "티켓 상태를 처리하는 중 문제가 발생했습니다.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

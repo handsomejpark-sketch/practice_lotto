@@ -10,14 +10,14 @@ export async function POST(request: Request) {
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });
+      return NextResponse.json({ error: "게임을 시작하려면 먼저 로그인해 주세요." }, { status: 401 });
     }
 
     const body = (await request.json()) as { userChoice?: "rock" | "paper" | "scissors" };
     const userChoice = body.userChoice;
 
     if (!userChoice || !["rock", "paper", "scissors"].includes(userChoice)) {
-      return NextResponse.json({ error: "올바른 선택값이 필요합니다." }, { status: 400 });
+      return NextResponse.json({ error: "가위, 바위, 보 중 하나를 선택해 주세요." }, { status: 400 });
     }
 
     const computerChoice = randomChoice();
@@ -98,7 +98,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "게임 처리 중 오류가 발생했습니다.";
+    const message = error instanceof Error ? error.message : "게임 결과를 처리하는 중 문제가 발생했습니다.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

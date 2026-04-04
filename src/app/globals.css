@@ -1,6 +1,14 @@
 :root {
-  --background: #fff6d8;
-  --foreground: #241510;
+  --background:
+    radial-gradient(circle at top, rgba(255, 221, 168, 0.8), transparent 24%),
+    linear-gradient(180deg, #f8efe6 0%, #f5e7db 46%, #f0dfd1 100%);
+  --foreground: #342117;
+  --color-ink: #3d271b;
+  --color-display: #4d2c1f;
+  --color-muted: rgba(113, 72, 53, 0.78);
+  --color-line: rgba(120, 77, 53, 0.12);
+  --shadow-soft: 0 28px 80px rgba(77, 44, 31, 0.12);
+  --font-display: var(--font-black-han-sans);
 }
 
 html {
@@ -17,7 +25,7 @@ body {
   min-height: 100vh;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-noto-sans-kr), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,6 +39,10 @@ body {
 button,
 input {
   font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {

@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Black_Han_Sans, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const notoSansKr = Noto_Sans_KR({
+  variable: "--font-noto-sans-kr",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const blackHanSans = Black_Han_Sans({
+  variable: "--font-black-han-sans",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Lotto RPS",
-  description: "가위바위보에 이기면 로또 티켓을 받는 모바일 이벤트 게임",
+  title: "Lotto RPS Event",
+  description: "가위바위보 한 판으로 로또 티켓을 받는 프리미엄 모바일 이벤트 게임",
 };
 
 export default function RootLayout({
@@ -23,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ko" className={`${notoSansKr.variable} ${blackHanSans.variable}`}>
       <body>{children}</body>
     </html>
   );
